@@ -1,0 +1,13 @@
+/web/bundles/
+/app/bootstrap.php.cache
+/app/config/parameters.yml
+/app/cache/*
+/app/logs/*
+/vendor/
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/build/
+/bin/
+*.md
+composer.lock
+LICENSE
