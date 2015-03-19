@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 cd $OPENSHIFT_REPO_DIR
+php composer.phar install
 php app/console doctrine:schema:update --env=prod --force
 php app/console cache:clear --env=prod
 
