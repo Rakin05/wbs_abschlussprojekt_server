@@ -32,7 +32,7 @@ class LigaService{
 
     public function getLiga($id)
     {
-        return $this->ligaRepository->findById($id);
+        return $this->ligaRepository->findOneById($id);
     }
 
     public function createNew($ligaName, $ligaLand)
