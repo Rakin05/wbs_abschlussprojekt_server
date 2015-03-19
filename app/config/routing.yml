@@ -1,7 +1,3 @@
 wbs_fussball_api:
     resource: "@WBSFussballApiBundle/Resources/config/routing.yml"
     prefix:   /api
-
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
