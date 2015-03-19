@@ -24,4 +24,14 @@ class LigaController extends Controller
         $serializer = $this->get('jms_serializer');
         return new Response($serializer->serialize($liga, $format));
     }
+
+    public function createAction()
+    {
+        $ligaName = $this->get('request')->get('ligaName');
+        $ligaLand = $this->get('request')->get('ligaLand');
+
+        $this->get('liga.service')->createNew($ligaName, $ligaLand);
+        
+        return new Response("Liga erstellt", 200);
+    }
 }

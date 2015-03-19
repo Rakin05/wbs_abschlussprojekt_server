@@ -3,5 +3,10 @@ wbs_fussball_api_alle_ligen:
     defaults: { _controller: WBSFussballApiBundle:Liga:all }
 
 wbs_fussball_api_liga:
-  path:     /liga/{format}/{id}
-  defaults: { _controller: WBSFussballApiBundle:Liga:show }
+    path:     /liga/{format}/{id}
+    defaults: { _controller: WBSFussballApiBundle:Liga:show }
+
+wbs_fussball_api_liga_xml_eintragen:
+    path:    /eintragen/liga/
+    defaults: { _controller: WBSFussballApiBundle:Liga:create }
+    methods: [POST]

@@ -2,6 +2,8 @@
 
 namespace WBS\Fussball\ApiBundle\Services;
 
+use Doctrine\ORM\EntityManager;
+
 use WBS\Fussball\ApiBundle\Entity\Liga;
 use WBS\Fussball\ApiBundle\Entity\LigaRepository;
 
@@ -12,9 +14,15 @@ class LigaService{
      */
     private $ligaRepository;
 
-    public function __construct(LigaRepository $ligaRepository)
+    /**
+     *@var EntityManager
+     */
+    private $manager;
+
+    public function __construct(LigaRepository $ligaRepository, EntityManager $manager)
     {
         $this->ligaRepository = $ligaRepository;
+        $this->manager = $manager;
     }
 
     public function getAlleLigen()
@@ -25,5 +33,15 @@ class LigaService{
     public function getLiga($id)
     {
         return $this->ligaRepository->findById($id);
+    }
+
+    public function createNew($ligaName, $ligaLand)
+    {
+        $liga = new Liga();
+        $liga->setLigaName($ligaName);
+        $liga->setLigaLand($ligaLand);
+
+        $this->manager->persist($liga);
+        $this->manager->flush();
     }
 }

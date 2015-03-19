@@ -14,3 +14,4 @@ services:
         class: WBS\Fussball\ApiBundle\Services\LigaService
         arguments:
             - "@liga.repository"
+            - "@doctrine.orm.entity_manager"
