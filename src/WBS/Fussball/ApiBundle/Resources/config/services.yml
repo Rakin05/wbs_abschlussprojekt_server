@@ -2,3 +2,15 @@ services:
 #    wbs_fussball_api.example:
 #        class: WBS\Fussball\ApiBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+    liga.repository:
+        class: WBS\Fussball\ApiBundle\Entity\LigaRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - WBS\Fussball\ApiBundle\Entity\Liga
+
+    liga.service:
+        class: WBS\Fussball\ApiBundle\Services\LigaService
+        arguments:
+            - "@liga.repository"
