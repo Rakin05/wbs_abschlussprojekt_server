@@ -1,3 +1,7 @@
-wbs_fussball_api_homepage:
+wbs_fussball_api_alle_ligen:
     path:     /liga/{format}
     defaults: { _controller: WBSFussballApiBundle:Liga:all }
+
+wbs_fussball_api_liga:
+  path:     /liga/{format}/{id}
+  defaults: { _controller: WBSFussballApiBundle:Liga:show }

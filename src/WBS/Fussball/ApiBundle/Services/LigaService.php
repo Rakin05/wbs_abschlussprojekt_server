@@ -17,8 +17,13 @@ class LigaService{
         $this->ligaRepository = $ligaRepository;
     }
 
-    public function alleLigen()
+    public function getAlleLigen()
     {
         return $this->ligaRepository->findAll();
+    }
+
+    public function getLiga($id)
+    {
+        return $this->ligaRepository->findById($id);
     }
 }
