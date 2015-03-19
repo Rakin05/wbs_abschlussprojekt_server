@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.7.238.130
+    database_port: 3306
+    database_name: wbs_fussball
+    database_user: adminXF8C7gr
+    database_password: YGAq6rmtWEcu
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: de_DE
+    secret: ThisTokenIsSomewhatSecret
