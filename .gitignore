@@ -6,6 +6,6 @@
 !app/logs/.gitkeep
 /build/
 /bin/
-*.md
+UP*.md
 composer.lock
 LICENSE
