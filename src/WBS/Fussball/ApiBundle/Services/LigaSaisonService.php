@@ -5,7 +5,9 @@ namespace WBS\Fussball\ApiBundle\Services;
 use Doctrine\ORM\EntityManager;
 
 use WBS\Fussball\ApiBundle\Entity\LigaSaison;
+use WBS\Fussball\ApiBundle\Entity\Liga;
 use WBS\Fussball\ApiBundle\Entity\LigaSaisonRepository;
+use WBS\Fussball\ApiBundle\Entity\LigaRepository;
 
 class LigaSaisonService{
 
@@ -15,13 +17,19 @@ class LigaSaisonService{
     private $ligaSaisonRepository;
 
     /**
+     *@var LigaRepository
+     */
+    private $ligaRepository;
+    
+    /**
      *@var EntityManager
      */
     private $manager;
 
-    public function __construct(LigaSaisonRepository $ligaSaisonRepository, EntityManager $manager)
+    public function __construct(LigaSaisonRepository $ligaSaisonRepository, LigaRepository $ligaRepository, EntityManager $manager)
     {
         $this->ligaSaisonRepository = $ligaSaisonRepository;
+        $this->ligaRepository = $ligaRepository;
         $this->manager = $manager;
     }
 
@@ -35,13 +43,19 @@ class LigaSaisonService{
         return $this->ligaSaisonRepository->findOneByLigaSaisonId($id);
     }
 
-    public function createNew($ligaName, $ligaLand)
+    public function createNew($ligaId, $saisonStart, $saisonEnde)
     {
-        $liga = new Liga();
-        $liga->setLigaName($ligaName);
-        $liga->setLigaLand($ligaLand);
+        $liga = $this->ligaRepository->findOneById($ligaId);
 
-        $this->manager->persist($liga);
+        if($liga == null)
+            return;
+
+        $ligaSaison = new LigaSaison();
+        $ligaSaison->setLigaBeginn(new \DateTime(date("Y-m-d", $saisonStart)));
+        $ligaSaison->setLigaEnde(new \DateTime(date("Y-m-d", $saisonEnde)));
+        $ligaSaison->setLiga($liga);
+
+        $this->manager->persist($ligaSaison);
         $this->manager->flush();
     }
 }

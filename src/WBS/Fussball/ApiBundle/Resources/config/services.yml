@@ -27,4 +27,5 @@ services:
         class: WBS\Fussball\ApiBundle\Services\LigaSaisonService
         arguments:
             - "@liga_saison.repository"
+            - "@liga.repository"
             - "@doctrine.orm.entity_manager"

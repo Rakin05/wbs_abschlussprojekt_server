@@ -6,7 +6,7 @@ wbs_fussball_api_liga:
     path:     /liga/{format}/{id}
     defaults: { _controller: WBSFussballApiBundle:Liga:show }
 
-wbs_fussball_api_liga_xml_eintragen:
+wbs_fussball_api_liga_eintragen:
     path:    /eintragen/liga/
     defaults: { _controller: WBSFussballApiBundle:Liga:create }
     methods: [POST]
@@ -19,5 +19,7 @@ wbs_fussball_api_saison:
     path:     /saison/{format}/{id}
     defaults: { _controller: WBSFussballApiBundle:LigaSaison:show }
 
-
-    
+wbs_fussball_api_saison_eintragen:
+    path:    /eintragen/saison/
+    defaults: { _controller: WBSFussballApiBundle:LigaSaison:create }
+    methods: [POST]

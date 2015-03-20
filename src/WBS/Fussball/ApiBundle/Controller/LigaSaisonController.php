@@ -25,13 +25,14 @@ class LigaSaisonController extends Controller
         return new Response($serializer->serialize($ligaSaison, $format));
     }
 
-    // public function createAction()
-    // {
-    //     $ligaName = $this->get('request')->get('ligaName');
-    //     $ligaLand = $this->get('request')->get('ligaLand');
+    public function createAction()
+    {
+        $ligaId = $this->get('request')->get('ligaId');
+        $saisonStart = $this->get('request')->get('saisonStart');
+        $saisonEnde = $this->get('request')->get('saisonEnde');
 
-    //     $this->get('liga.service')->createNew($ligaName, $ligaLand);
+        $this->get('liga_saison.service')->createNew($ligaId, $saisonStart, $saisonEnde);
         
-    //     return new Response("Liga erstellt", 200);
-    // }
+        return new Response("Saison erstellt", 200);
+    }
 }

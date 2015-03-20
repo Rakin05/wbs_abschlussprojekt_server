@@ -101,10 +101,10 @@ class LigaSaison
     /**
      * Set liga
      *
-     * @param \WBS\Fussball\ApiBundle\Entity\Liga;
+     * @param WBS\Fussball\ApiBundle\Entity\Liga;
      * @return LigaSaison
      */
-    public function setLiga(WBS\Fussball\ApiBundle\Entity\Liga $liga)
+    public function setLiga(Liga $liga)
     {
         $this->liga = $liga;
 
