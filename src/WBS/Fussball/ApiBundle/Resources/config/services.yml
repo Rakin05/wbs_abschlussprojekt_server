@@ -10,8 +10,21 @@ services:
         arguments:
             - WBS\Fussball\ApiBundle\Entity\Liga
 
+    liga_saison.repository:
+        class: WBS\Fussball\ApiBundle\Entity\LigaSaisonRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - WBS\Fussball\ApiBundle\Entity\LigaSaison
+
     liga.service:
         class: WBS\Fussball\ApiBundle\Services\LigaService
         arguments:
             - "@liga.repository"
+            - "@doctrine.orm.entity_manager"
+
+    liga_saison.service:
+        class: WBS\Fussball\ApiBundle\Services\LigaSaisonService
+        arguments:
+            - "@liga_saison.repository"
             - "@doctrine.orm.entity_manager"

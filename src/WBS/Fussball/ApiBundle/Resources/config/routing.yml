@@ -10,3 +10,14 @@ wbs_fussball_api_liga_xml_eintragen:
     path:    /eintragen/liga/
     defaults: { _controller: WBSFussballApiBundle:Liga:create }
     methods: [POST]
+
+wbs_fussball_api_alle_saisons:
+    path:     /saison/{format}
+    defaults: { _controller: WBSFussballApiBundle:LigaSaison:all }
+
+wbs_fussball_api_saison:
+    path:     /saison/{format}/{id}
+    defaults: { _controller: WBSFussballApiBundle:LigaSaison:show }
+
+
+    
