@@ -19,3 +19,4 @@
 
 - Verein:
   - alle Vereine http://server-wbsfiae.rhcloud.com/api/verein/xml oder http://server-wbsfiae.rhcloud.com/api/verein/json
+  - ein Verein http://server-wbsfiae.rhcloud.com/api/verein/xml/{id} oder http://server-wbsfiae.rhcloud.com/api/verein/json/{id}

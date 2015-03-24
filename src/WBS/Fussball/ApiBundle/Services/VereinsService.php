@@ -23,4 +23,10 @@ class VereinsService{
     {
         return $this->vereinRepository->findAll();
     }
+
+    public function getVerein($id)
+    {
+        return $this->vereinRepository->findOneByVereinsId($id);
+    }
+
 } 
