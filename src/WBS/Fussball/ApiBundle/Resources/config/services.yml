@@ -41,3 +41,4 @@ services:
         class: WBS\Fussball\ApiBundle\Services\VereinsService
         arguments:
             - "@verein.repository"
+            - "@doctrine.orm.entity_manager"

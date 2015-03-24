@@ -31,3 +31,7 @@ wbs_fussball_api_alle_vereine:
 wbs_fussball_api_verein:
     path:     /verein/{format}/{id}
     defaults: { _controller: WBSFussballApiBundle:Verein:show }
+
+wbs_fussball_api_verein_eintragen:
+    path:     /eintragen/verein
+    defaults: { _controller: WBSFussballApiBundle:Verein:create }

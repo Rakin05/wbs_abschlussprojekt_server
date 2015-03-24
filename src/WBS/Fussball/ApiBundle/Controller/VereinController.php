@@ -22,4 +22,13 @@ class VereinController extends Controller
 
         return new Response($serializer->serialize($alleVereine, $format));
     }
+
+    public function createAction()
+    {
+        $vereinsName = $this->get('request')->get('vereinsName');
+
+        $this->get('vereine.service')->createNew($vereinsName);
+
+        return new Response("Verein erstellt");
+    }
 }
