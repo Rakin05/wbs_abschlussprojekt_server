@@ -17,3 +17,5 @@
     - saisonStart sollte ein Datum oder Timestamp sein
     - saisonEnde sollte ein Datum oder Timestamp sein
 
+- Verein:
+  - alle Vereine http://server-wbsfiae.rhcloud.com/api/verein/xml oder http://server-wbsfiae.rhcloud.com/api/verein/json

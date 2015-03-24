@@ -29,3 +29,15 @@ services:
             - "@liga_saison.repository"
             - "@liga.repository"
             - "@doctrine.orm.entity_manager"
+
+    verein.repository:
+        class: WBS\Fussball\ApiBundle\Entity\VereinRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - WBS\Fussball\ApiBundle\Entity\Verein
+  
+    vereine.service:
+        class: WBS\Fussball\ApiBundle\Services\VereinsService
+        arguments:
+            - "@verein.repository"

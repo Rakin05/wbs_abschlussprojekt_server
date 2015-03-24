@@ -23,3 +23,7 @@ wbs_fussball_api_saison_eintragen:
     path:    /eintragen/saison/
     defaults: { _controller: WBSFussballApiBundle:LigaSaison:create }
     methods: [POST]
+
+wbs_fussball_api_alle_vereine:
+    path:     /verein/{format}
+    defaults: { _controller: WBSFussballApiBundle:Verein:all }
