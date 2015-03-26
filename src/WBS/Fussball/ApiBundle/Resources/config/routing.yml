@@ -47,3 +47,11 @@ wbs_fussball_api_spieler:
 wbs_fussball_api_spieler_eintragen:
     path:     /eintragen/spieler/
     defaults: { _controller: WBSFussballApiBundle:Spieler:create }
+
+wbs_fussball_api_alle_spiele:
+    path:    /spiele/{format}
+    defaults: { _controller: WBSFussballApiBundle:Spiel:all }
+
+wbs_fussball_api_spiel:
+    path:    /spiele/{format}/{id}
+    defaults: { _controller: WBSFussballApiBundle:Spiel:show } 

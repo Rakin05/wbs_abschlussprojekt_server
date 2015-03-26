@@ -56,3 +56,15 @@ services:
             - "@spieler.repository"
             - "@verein.repository"
             - "@doctrine.orm.entity_manager"
+
+    spiele.repository:
+        class: WBS\Fussball\ApiBundle\Entity\SpielRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - WBS\Fussball\ApiBundle\Entity\Spiel
+
+    spiele.service:
+        class: WBS\Fussball\ApiBundle\Services\SpieleService
+        arguments:
+            - "@spiele.repository"
