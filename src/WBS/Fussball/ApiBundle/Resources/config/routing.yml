@@ -54,4 +54,8 @@ wbs_fussball_api_alle_spiele:
 
 wbs_fussball_api_spiel:
     path:    /spiele/{format}/{id}
-    defaults: { _controller: WBSFussballApiBundle:Spiel:show } 
+    defaults: { _controller: WBSFussballApiBundle:Spiel:show }
+
+wbs_fussball_api_spiel_eintragen:
+    path:    /eintragen/spiele/
+    defaults: { _controller: WBSFussballApiBundle:Spiel:create } 

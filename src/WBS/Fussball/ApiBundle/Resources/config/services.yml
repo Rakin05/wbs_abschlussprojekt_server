@@ -68,3 +68,6 @@ services:
         class: WBS\Fussball\ApiBundle\Services\SpieleService
         arguments:
             - "@spiele.repository"
+            - "@liga_saison.repository"
+            - "@verein.repository"
+            - "@doctrine.orm.entity_manager"

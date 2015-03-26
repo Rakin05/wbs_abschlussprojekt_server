@@ -25,13 +25,17 @@ class SpielController extends Controller
         return new Response($serializer->serialize($spiel, $format));
     }
 
-    // public function createAction()
-    // {
-    //     $vereinsId = $this->get('request')->get('vereinsId');
-    //     $spielerName = $this->get('request')->get('spielerName');
-
-    //     $this->get('spieler.service')->createNewSpieler($vereinsId, $spielerName);
+    public function createAction()
+    {
+        $ligaSaisonId = $this->get('request')->get('ligaSaisonId');
+        $heimVereinId = $this->get('request')->get('heimVereinId');
+        $gastVereinId = $this->get('request')->get('gastVereinId');
+        $heimTore = $this->get('request')->get('heimTore');
+        $gastTore = $this->get('request')->get('gastTore');
+        $spielTag = $this->get('request')->get('spielTag');
         
-    //     return new Response("Spieler erstellt", 200);
-    // }
+        $this->get('spiele.service')->createNewSpiel($ligaSaisonId, $heimVereinId, $gastVereinId, $heimTore, $gastTore, $spielTag);
+        
+        return new Response("Spiel erstellt", 200);
+    }
 }

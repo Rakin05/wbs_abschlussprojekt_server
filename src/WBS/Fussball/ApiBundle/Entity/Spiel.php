@@ -23,21 +23,21 @@ class Spiel
 
     /**
      * @var Verein
-     * @ORM\OneToOne(targetEntity="Verein")
+     * @ORM\ManyToOne(targetEntity="Verein")
      * @ORM\JoinColumn(name="heim_verein_id", referencedColumnName="vereinsId")
      */
     private $heimVerein;
 
     /**
      * @var Verein
-     * @ORM\OneToOne(targetEntity="Verein")
+     * @ORM\ManyToOne(targetEntity="Verein")
      * @ORM\JoinColumn(name="gast_verein_id", referencedColumnName="vereinsId")
      */
     private $gastVerein;
     
     /**
      * @var LigaSaison
-     * @ORM\OneToOne(targetEntity="LigaSaison")
+     * @ORM\ManyToOne(targetEntity="LigaSaison")
      * @ORM\JoinColumn(name="liga_saison_id", referencedColumnName="liga_saison_id")
      */
     private $ligaSaison;

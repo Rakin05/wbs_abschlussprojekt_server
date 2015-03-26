@@ -33,3 +33,10 @@
 - Spiel:
   - alle Spiele http://server-wbsfiae.rhcloud.com/api/spiele/xml oder http://server-wbsfiae.rhcloud.com/api/spiele/json
   - ein Spiel http://server-wbsfiae.rhcloud.com/api/spiele/xml/{id} oder http://server-wbsfiae.rhcloud.com/api/spiele/json/{id}
+  - Spiel anlegen http://server-wbsfiae.rhcloud.com/api/eintragen/spiele/ Parameter: "ligaSaisonId=xxx&heimVereinId=xxx&gastVereinId=xxx&heimTore=xxx&gastTore=xxx&spielTag=xxx"
+    - ligaSaisonId sollte ein Integer sein
+    - heimVereinId sollte ein Integer sein
+    - gastVereinId sollte ein Integer sein
+    - heimTore sollte ein Integer sein
+    - gastTore sollte ein Integer sein
+    - spielTag sollte ein Timestamp sein
