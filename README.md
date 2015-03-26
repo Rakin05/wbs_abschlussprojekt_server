@@ -29,3 +29,7 @@
   - Spieler anlegen http://server-wbsfiae.rhcloud.com/api/eintragen/spieler/ Paramater: "vereinsId=xxx&spielerName=xxx"
     - vereinsId sollte ein Integer sein
     - spielerName sollte ein String sein
+
+- Spiel:
+  - alle Spiele http://server-wbsfiae.rhcloud.com/api/spiele/xml oder http://server-wbsfiae.rhcloud.com/api/spiele/json
+  - ein Spiel http://server-wbsfiae.rhcloud.com/api/spiele/xml/{id} oder http://server-wbsfiae.rhcloud.com/api/spiele/json/{id}
