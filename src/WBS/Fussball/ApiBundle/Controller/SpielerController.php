@@ -32,6 +32,6 @@ class SpielerController extends Controller
 
         $this->get('spieler.service')->createNewSpieler($vereinsId, $spielerName);
         
-        return new Response("Liga erstellt", 200);
+        return new Response("Spieler erstellt", 200);
     }
 }
