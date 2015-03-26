@@ -42,3 +42,17 @@ services:
         arguments:
             - "@verein.repository"
             - "@doctrine.orm.entity_manager"
+
+    spieler.repository:
+        class: WBS\Fussball\ApiBundle\Entity\SpielerRepository
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments:
+            - WBS\Fussball\ApiBundle\Entity\Spieler
+            
+    spieler.service:
+        class: WBS\Fussball\ApiBundle\Services\SpielerService
+        arguments:
+            - "@spieler.repository"
+            - "@verein.repository"
+            - "@doctrine.orm.entity_manager"

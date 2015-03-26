@@ -22,3 +22,10 @@
   - ein Verein http://server-wbsfiae.rhcloud.com/api/verein/xml/{id} oder http://server-wbsfiae.rhcloud.com/api/verein/json/{id}
   - Verein anlegen http://server-wbsfiae.rhcloud.com/api/eintragen/verein/ Paramater: "vereinsName=xxx"
     - vereinsName sollte ein String sein
+
+- Spieler:
+  - alle Spieler http://server-wbsfiae.rhcloud.com/api/spieler/xml oder http://server-wbsfiae.rhcloud.com/api/spieler/json
+  - ein Spieler http://server-wbsfiae.rhcloud.com/api/spieler/xml/{id} oder http://server-wbsfiae.rhcloud.com/api/spieler/json/{id}
+  - Spieler anlegen http://server-wbsfiae.rhcloud.com/api/eintragen/spieler/ Paramater: "vereinsId=xxx&spielerName=xxx"
+    - vereinsId sollte ein Integer sein
+    - spielerName sollte ein String sein

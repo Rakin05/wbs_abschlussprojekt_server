@@ -3,6 +3,7 @@
 namespace WBS\Fussball\ApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Verein
@@ -12,6 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Verein
 {
+    public function __construct()
+    {
+        $this->spieler = new ArrayCollection();
+    }
+
     /**
      * @var integer
      *
@@ -27,6 +33,11 @@ class Verein
      * @ORM\Column(name="vereinsName", type="string", length=255)
      */
     private $vereinsName;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Spieler", mappedBy="verein")
+     */
+    private $spieler;
 
 
     /**
@@ -60,5 +71,16 @@ class Verein
     public function getVereinsName()
     {
         return $this->vereinsName;
+    }
+
+    /**
+     * Add Spieler
+     *
+     * @param Spieler
+     * @return Verein
+     */
+    public function addSpieler($spieler)
+    {
+        $this->spieler->add($spieler);
     }
 }
